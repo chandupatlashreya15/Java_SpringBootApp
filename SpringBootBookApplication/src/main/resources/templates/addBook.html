@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body bgcolor="yellow">
+<h1>Welcome Here for the Book Application</h1>
+<br>
+<a href="/book/addBook">Add Book</a>
+<a href="/book/viewBook">View Book</a>
+<br>
+<form th:action="@{/book/add}" th:object="${book}" method="post">
+<input type="text" th:field="*{book_name}" placeholder="Enter book name">
+<input type="number" th:field="*{book_price}" placeholder="Enter book price">
+<input type="text" th:field="*{book_author}" placeholder="Enter book author">
+<input type="text" th:field="*{book_publisher}" placeholder="Enter book publisher">
+<input type="submit" value="Add Book">
+
+</form>
+
+</body>
+</html>

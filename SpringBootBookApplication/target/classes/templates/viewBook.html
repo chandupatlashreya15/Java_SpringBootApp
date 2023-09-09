@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body bgcolor="yellow">
+<br><br>
+<h1>Welcome Here for the Book Application</h1>
+<br>
+<a href="/book/addBook">Add Book</a>
+<a href="/book/viewBook">View Book</a>
+<br>
+<table border="2" width="300" height="200" cellpadding="20" align="center">
+<tr>
+<td>Book ID</td>
+<td>Book Name</td>
+<td>Book Price</td>
+<td>Book Author</td>
+<td>Book Publisher</td>
+</tr>
+
+<tr th:each="book: ${book}">
+<td th:text="${book.bkid}"></td>
+<td th:text="${book.book_name}"></td>
+<td th:text="${book.book_price}"></td>
+<td th:text="${book.book_author}"></td>
+<td th:text="${book.book_publisher}"></td>
+<td><a th:href="@{/book/editBook/{bkid}(bkid=${book.bkid})}">Update Book</a></td>
+<td><a th:href="@{/book/deleteBook/{bkid}(bkid=${book.bkid})}">Delete Book</a></td>
+
+</tr>
+
+
+</table>
+</body>
+</html>
